@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_calculate).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
                 if(ed_height.length() < 1)
                     Toast.makeText(MainActivity.this,
                             "請輸入身高", Toast.LENGTH_SHORT).show();
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 progressBar2.setProgress(0);
                 tv_progress.setText("0%");
 
-                ll_progress.setVerticalGravity(View.VISIBLE);
+                ll_progress.setVisibility(View.VISIBLE);
             }
             @Override
             protected  Boolean doInBackground(Void... voids) {
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean aBoolean) {
                 super.onPostExecute(aBoolean);
-                ll_progress.setVerticalGravity(View.GONE);
+                ll_progress.setVisibility(View.GONE);
 
                     int h = Integer.valueOf(
                             ed_height.getText().toString());
